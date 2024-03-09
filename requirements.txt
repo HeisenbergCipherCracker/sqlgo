@@ -5,6 +5,7 @@ urllib3
 charset_normalizer
 idna
 six
+PySocks
 requests
 GitPython>=3.1.26
 sqlmap>=1.8.0

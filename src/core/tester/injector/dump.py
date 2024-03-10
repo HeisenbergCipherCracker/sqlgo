@@ -40,6 +40,7 @@ except:
 	pass
 from src.data import arg
 from src.logger.log import logger
+from src.core.common.common import exportCsv
 #Reference: https://github.com/GreySec/MySQL-Injector/blob/master/mysql-injector.py
 ip = 1
 dump_array = []

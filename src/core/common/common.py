@@ -27,6 +27,7 @@ import string
 import glob
 import os
 import re
+sys.path.append(os.getcwd())
 from sqlmap.lib.core.common import setColor
 from src.data import arg,config
 from src.core.enums.enums import DBMS
@@ -166,3 +167,12 @@ def whatDbms(response):
         return
         
 
+
+def exportCsv(**kwargs):
+    keys = list(kwargs.keys())
+    values = list(kwargs.values())
+    result = [keys]  
+    result.append(values)  
+    return result
+x = exportCsv(a=1, b=2, c=3)
+print(x)

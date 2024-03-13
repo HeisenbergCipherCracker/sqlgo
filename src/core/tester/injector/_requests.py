@@ -624,7 +624,7 @@ def error_based_url_replace(url):
                 if is_sql_injection_vulnerable(response_content):
                     if arg.beep:
                         __import__("extras.beep.beep")
-                    logger.info("%s get parameter is %s injectable"%(parameter,"Error based SQl query"))
+                    logger.info("%s (GET) parameter is %s injectable"%(parameter,"Error based SQl query"))
                     logger.warning("tamper : %s"%arg.tamper if arg.tamper is not None else "Nlo tamper usage")
                     logger.warning("Potential sql injection detected!!!")
                     logger.warning("found potential sql injection on %s"%url)
@@ -702,7 +702,7 @@ def time_based_url_replace(url):
                         time.sleep(delay_time)
                     if arg.beep:
                         __import__("extras.beep.beep")
-                    logger.info("%s get parameter is %s injectable"%(parameter,"time based Sql query"))
+                    logger.info("%s (GET) parameter is %s injectable"%(parameter,"time based Sql query"))
                     logger.warning("tamper : %s"%arg.tamper if arg.tamper is not None else "Nlo tamper usage")
                     logger.warning("found potential sql injection on %s"%url)
                     logger.warning("payload:%s"%payload)
@@ -770,7 +770,7 @@ def make_set_url_replace(url):
                 if is_sql_injection_vulnerable(response_content):
                     if arg.beep:
                         __import__("extras.beep.beep")
-                    logger.info("%s get parameter is %s injectable"%(parameter,"Make set mysql query"))
+                    logger.info("%s (GET) parameter is %s injectable"%(parameter,"Make set mysql query"))
                     logger.warning("tamper : %s"%"No tamper used" if arg.tamper is not None else arg.tamper)
                     logger.warning("Potential sql injection detected!!!")
                     logger.warning("found potential sql injection on %s"%url)
@@ -837,7 +837,7 @@ def union_based_url_replace(url):
                     logger.warning("Potential sql injection detected!!!")
                     if arg.beep:
                         __import__("extras.beep.beep")
-                    logger.info("%s get parameter is %s injectable"%(parameter,"Union based(ALL SELECT) query"))
+                    logger.info("%s (GET) parameter is %s injectable"%(parameter,"Union based(ALL SELECT) query"))
                     logger.warning("tamper : %s"%arg.tamper if arg.tamper is not None else "no tamper used")
                     logger.warning("found potential sql injection on %s"%url)
                     logger.warning("payload:%s"%payload)
@@ -908,7 +908,7 @@ def stack_query(url):
                     logger.warning("Potential sql injection detected!!!")
                     if arg.beep:
                         __import__("extras.beep.beep")
-                    logger.info("%s get parameter is %s injectable"%(parameter,"SQl"+stack_query.__name__))
+                    logger.info("%s (GET) parameter is %s injectable"%(parameter,"SQl"+stack_query.__name__))
                     logger.warning("tamper : %s"%arg.tamper if arg.tamper is not None else "No tamper was used")
                     logger.warning("found potential sql injection on %s"%url)
                     logger.warning("payload:%s"%payload)
@@ -977,7 +977,7 @@ def error_boolean(url):
                 if is_sql_injection_vulnerable(response_content):
                     logger.warning("Potential sql injection detected!!!")
                     __import__("extras.beep.beep")
-                    logger.info("%s get parameter is %s injectable"%(parameter,error_boolean.__name__+"SQl query"))
+                    logger.info("%s (GET) parameter is %s injectable"%(parameter,error_boolean.__name__+"SQl query"))
                     logger.warning("tamper : %s"%"No tamper used" if arg.tamper is not None else arg.tamper)
                     logger.warning("found potential sql injection on %s"%url)
                     logger.warning("payload:%s"%payload)
